@@ -15,5 +15,7 @@ class ExampleTest extends TestCase
         $response = $this->get('/');
 
         $response->assertStatus(200);
+        $response->assertSee('Evolusi PL');
+        $response->assertSee('24/544540/SV/25445');
     }
 }
