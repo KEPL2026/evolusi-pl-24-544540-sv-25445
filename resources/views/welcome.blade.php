@@ -104,16 +104,19 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-white mb-2">Dual-Job Pipeline</h3>
+                    <h3 class="text-lg font-semibold text-white mb-2">Triple-Job Pipeline</h3>
                     <p class="text-sm text-slate-400 mb-3">
                         GitHub Actions otomatis menguji kode pada setiap push & Pull Request.
                     </p>
                     <ul class="space-y-1.5 text-xs text-slate-400 font-mono">
                         <li class="flex items-center gap-2">
-                            <span class="text-emerald-400">&check;</span> Job 1: Backend PHPUnit Tests
+                            <span class="text-emerald-400">&check;</span> Job 1: Code Quality & Lint (Pint)
                         </li>
                         <li class="flex items-center gap-2">
-                            <span class="text-emerald-400">&check;</span> Job 2: Frontend Vite Asset Build
+                            <span class="text-emerald-400">&check;</span> Job 2: Backend PHPUnit Tests
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <span class="text-emerald-400">&check;</span> Job 3: Frontend Vite Asset Build
                         </li>
                     </ul>
                 </div>

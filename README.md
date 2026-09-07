@@ -43,17 +43,22 @@ main (Production Ready & Protected)
 
 ## ⚙️ Continuous Integration (GitHub Actions)
 
-Pipeline otomatis dikonfigurasi pada `.github/workflows/ci.yml` dengan **2 Job mandiri** yang berjalan paralel setiap kali terjadi `push` atau `pull_request` ke cabang `main` dan `dev`:
+Pipeline otomatis dikonfigurasi pada `.github/workflows/ci.yml` dengan **3 Job mandiri** yang berjalan paralel setiap kali terjadi `push` atau `pull_request` ke cabang `main` dan `dev`:
 
-1. **Job 1: `Backend Tests (PHPUnit)`**
+1. **Job 1: `Code Quality & Lint (Laravel Pint)`**
    * Menginisialisasi runner Ubuntu dengan runtime **PHP 8.3**.
-   * Memasang dependensi dependensi Composer.
+   * Memasang dependensi Composer.
+   * Menjalankan standarisasi kode dan *linter* otomatis (`./vendor/bin/pint --test`).
+
+2. **Job 2: `Backend Tests (PHPUnit)`**
+   * Menginisialisasi runner Ubuntu dengan runtime **PHP 8.3**.
+   * Memasang dependensi Composer.
    * Menjalankan suite pengujian unit dan fitur (`php artisan test`).
 
-2. **Job 2: `Frontend Build (Vite)`**
+3. **Job 3: `Frontend Build (Vite)`**
    * Menginisialisasi runner Ubuntu dengan runtime **Node.js 22**.
    * Memasang dependensi frontend melalui `npm ci`.
-   * Memvalidasi bahwa bundle asset CSS & JS dapat dikompilasi secara bersih (`npm run build`).
+   * Memvalidasi bahwa *bundle asset* CSS & JS dapat dikompilasi secara bersih (`npm run build`).
 
 ---
 
